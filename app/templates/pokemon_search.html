@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Pokemon Search
+{% endblock %}
+
+{% block content %}
+
+<form method="POST" class="px-3">
+    {{ form.pokemon }}
+    {{ form. submit }}
+</form>
+
+<!-- if the user enters a value within the form, display the values below -->
+{% if pokemon_info %} 
+    <h2>{{ pokemon_info.name }}</h2>
+    <img src="{{ pokemon_info.front_shiny }}" alt="Pokemon Image">
+    <p>Ability: {{ pokemon_info.ability }}</p>
+    <p>Base Experience: {{ pokemon_info.base_experience }}</p>
+    <p>HP Stat: {{ pokemon_info.hp_stat }}</p>
+    <p>Attack Stat: {{ pokemon_info.attack_stat }}</p>
+    <p>Defense Stat: {{ pokemon_info.defense_stat }}</p>
+{% endif %}
+
+{% endblock %}
